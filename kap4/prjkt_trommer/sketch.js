@@ -10,4 +10,5 @@ function draw() {
     circle(x,height/2,d);
     x += d;
   }
+  console.log('lol')
 }
