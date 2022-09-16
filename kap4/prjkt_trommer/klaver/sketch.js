@@ -21,21 +21,19 @@ function draw() {
       text(binds[i], i*d+15, height/2+50);
   }
 
-
   for(l = 1; l <= 8; l++){ 
       fill(0,0,0);
       rect(d*l-d/4,height/2-h+60, fD, fH);
       fill(255,255,255);
       text(binds[l+8], d*l-4, height/2-h+90);
-}
+  }
 }
 
 function keyPressed(){
-  if(binds.includes('' + event.key)){
-    console.log('/klaver/noder/node' + event.key + '.mp3')
-    song = new Audio('/klaver/noder/node' + event.key + '.mp3');
+    //console.log('assets/node' + event.key + '.mp3');
+    //hvis den er i arrayet, definerer den song variablen som en ny p5.sound, afhængig af hvilken knap der er trykket på
+    song = new Audio('media/node' + event.key + '.mp3');
     //spiller lyden
     song.play();
-  }
 }
 
