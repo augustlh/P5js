@@ -1,9 +1,8 @@
-//dekleration af globale variabler, og tildeling af værdier til d og c
 let d = 100;
 let x = 0+d/2;
 let letr;
 let song;
-//deklaration af arrayet binds, som angiver, hvilke knapper, der afspiller lyde. Arrayet tildeles værdier.
+//deklaration af arrayet binds, som angiver, hvilke knapper, der afspiller lyde
 var binds = ['q','w','e','r'];
 
 function setup() {
@@ -31,9 +30,8 @@ function keyPressed(){
   if(binds.includes('' + event.key)){
     //console.log('assets/node' + event.key + '.mp3');
     //hvis den er i arrayet, definerer den song variablen som en ny p5.sound, afhængig af hvilken knap der er trykket på
-    song = new Audio('/trommer/assets/node' + event.key + '.mp3');
+    song = new Audio('assets/node' + event.key + '.mp3');
     //spiller lyden
     song.play();
   }
 }
-
