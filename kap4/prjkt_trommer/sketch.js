@@ -2,9 +2,7 @@ let d = 100;
 let x = 0+d/2;
 let letr;
 let song;
-var binds = ['Q','W','E','R'];
-
-let 
+var binds = ['q','w','e','r'];
 
 function setup() {
   createCanvas(400, 400);
@@ -22,7 +20,10 @@ function draw() {
 }
 
 function keyPressed(){
-    
+  if(binds.includes('' + event.key)){
     console.log('assets/node' + event.key + '.mp3');
+    song = new Audio('assets/node' + event.key + '.mp3');
+    song.play();
+  }
 }
 
