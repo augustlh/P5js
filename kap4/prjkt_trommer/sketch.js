@@ -1,9 +1,9 @@
-//dekleration af globale variabler
+//dekleration af globale variabler, og tildeling af værdier til d og c
 let d = 100;
 let x = 0+d/2;
 let letr;
 let song;
-//deklaration af arrayet binds, som angiver, hvilke knapper, der afspiller lyde
+//deklaration af arrayet binds, som angiver, hvilke knapper, der afspiller lyde. Arrayet tildeles værdier.
 var binds = ['q','w','e','r'];
 
 function setup() {
