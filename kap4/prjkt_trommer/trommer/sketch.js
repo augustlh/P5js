@@ -31,7 +31,7 @@ function keyPressed(){
   if(binds.includes('' + event.key)){
     //console.log('assets/node' + event.key + '.mp3');
     //hvis den er i arrayet, definerer den song variablen som en ny p5.sound, afhængig af hvilken knap der er trykket på
-    song = new Audio('assets/node' + event.key + '.mp3');
+    song = new Audio('/trommer/assets/node' + event.key + '.mp3');
     //spiller lyden
     song.play();
   }
