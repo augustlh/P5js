@@ -1,11 +1,13 @@
+//ærklæring af globale variabler, og tildeling til enkele af dem
 let d = 40;
 let h = 100;
 let fD = 20;
 let fH = 50
 let letr;
 let key;
-let x = d-d/4;
+let x = d-d/4; 
 let song;
+//ærklæring af arrayet binds, som er tildelt de knapper, der skal afspille lyde
 var binds = ['q','w','e','r','t','y','u','i','o','1','2','3','4','5','6','7','8'];
 
 function setup() {
@@ -15,8 +17,10 @@ function setup() {
 }
 
 function draw() {
+  //for loop der tegner rektanglerne
   for(i = 0; i <= width/40; i++){
       fill(255,255,255);
+      //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den
       if(binds[i] == key){
         fill(255,0,0);
       }
@@ -26,6 +30,7 @@ function draw() {
       fill(255,255,255);
   }
 
+  //for loop der tegner de sorte keys
   for(l = 1; l <= 8; l++){ 
       fill(0,0,0);
       rect(d*l-d/4,height/2-h+60, fD, fH);
@@ -37,10 +42,12 @@ function draw() {
 
 function keyPressed(){
     //console.log('assets/node' + event.key + '.mp3');
+    if(binds.includes('' + event.key)){
     //hvis den er i arrayet, definerer den song variablen som en ny p5.sound, afhængig af hvilken knap der er trykket på
     song = new Audio('media/node' + event.key + '.mp3');
     //spiller lyden
     song.play();
     key = '' + event.key;
+    }
 }
 
