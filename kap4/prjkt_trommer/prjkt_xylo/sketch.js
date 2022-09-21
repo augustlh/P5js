@@ -23,7 +23,7 @@ var binds = [
 ];
 
 function preload() {
-  cas = loadSound("assets/1.mp3");
+  cas = loadSound("assets/1.wav");
   cbs = loadSound("assets/2.mp3");
   ccs = loadSound("assets/3.mp3");
 }
@@ -43,13 +43,12 @@ function setup() {
 }
 
 function draw() {
+  background(23);
   if (ca === true) {
     rect(x, y, d, d);
-    y += 5;
+    y += 4;
     if (y + (d / 2) * 1.8 >= height) {
       ca = false;
-      fill(156);
-      rect(d * 0, 0, d, height);
       y = -d;
     }
   }
@@ -58,8 +57,6 @@ function draw() {
     j -= 5;
     if (j + (d / 2) * 0.4 <= 0) {
       cb = false;
-      fill(156);
-      rect(d, 0, d, height);
       j = height;
     }
   }
@@ -68,25 +65,23 @@ function draw() {
     l += 5;
     if (l + (d / 2) * 1.8 >= height) {
       cc = false;
-      fill(156);
-      rect(d * 2, 0, d, height);
       l = -d;
     }
   }
 }
 
 function keyPressed() {
-  if (key === "q") {
+  if (key === "q" && ca != true) {
     fill(255);
     ca = true;
     cas.play();
   }
-  if (key === "w") {
+  if (key === "w" && cb != true) {
     fill(255);
     cb = true;
     cbs.play();
   }
-  if (key === "e") {
+  if (key === "e" && cc != true) {
     fill(255);
     cc = true;
     ccs.play();
