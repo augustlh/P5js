@@ -1,4 +1,4 @@
-//De globale variabler defineres
+//De globale variabler defineres og cD og cA tildeles værdier
 let x,y,a,b,speed,d;
 let cX,cY;
 let cD = 75;
@@ -7,7 +7,7 @@ let rX, rY, eX,eY;
 let img;
 
 
-//funktionen kører en gang, den definerer kanvasset og tildeler værdier til diverse varaiabler lokalt
+//funktionen kører en gang, den definerer kanvasset og tildeler værdier til diverse varaiabler
 function setup() {
   createCanvas(400, 400);
   frameRate(60);
@@ -59,7 +59,6 @@ function collision(){
 //tjekker om vores x eller y-koordinater overstiger eller er mindre end canvassets parametre
 function checkBoundaries(){
   if(x + d/2 >= width){
-
       a *= -1;
       b=0;
   } if(x - d/2 <= 0){
