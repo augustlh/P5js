@@ -31,6 +31,7 @@ var binds = [
 function setup() {
   createCanvas(360, 400);
   background(156);
+  frameRate(20);
 }
 
 function draw() {
@@ -40,6 +41,7 @@ function draw() {
     //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den
     if (binds[i] == key) {
       fill(169, 169, 169);
+      key = '';
     }
     rect(i * d, height / 2 - d, d, h);
     fill(0, 0, 0);
