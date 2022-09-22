@@ -7,7 +7,7 @@ let letr;
 let key;
 let x = d - d / 4;
 let song;
-//ærklæring af arrayet binds, som er tildelt de knapper, der skal afspille lyde
+//ærklæring af arrayet binds, som er tildelt string værdierne til de knapper, der skal afspille lyde
 var binds = [
   "q",
   "w",
@@ -38,7 +38,8 @@ function draw() {
   //for loop der tegner rektanglerne
   for (i = 0; i <= width / 40; i++) {
     fill(255, 255, 255);
-    //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den
+    //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den - denne metode er dog knap så god at anvende, da den afhænger af rameraten.
+    //hvis frameRaten er for høj, så ses key response ikke på skærmen
     if (binds[i] == key) {
       fill(169, 169, 169);
       key = '';
