@@ -17,8 +17,8 @@ function setup() {
   createCanvas(400, 400);
   frameRate(60);
   d = 40;
-  x = random(0+d,width-d);
-  y = random(0+d,height-d);
+  x = random(0+d,width-d); //sætter x til en tilfældig værdi mellem 0 og width - d (musen)
+  y = random(0+d,height-d); //sætter y til en tilfældig værdi mellem 0 og height - d (diameter på musen)
   speed = 7;
   a = speed;
   b = 0;
@@ -66,7 +66,7 @@ function collision(){
 
 //funktion der håndterer kollision med kanvassets grænser
 function checkBoundaries(){
-  if(x + d/2 >= width){ //d/2 repræsenterer radius af cirklen
+  if(x + d/2 >= width){ //d/2 repræsenterer radius af cirklen (musen). Hvis x + radius af musen er større end width har den ramt højre væg
       a *= -1;
       b=0;
   } if(x - d/2 <= 0){
