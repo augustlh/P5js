@@ -1,4 +1,10 @@
-//deklaration af globale variabler
+/*
+August Leander Hedman
+S2n
+Programmering B, P5.js
+*/
+
+//de globale variabler erklæres
 let d;
 let h = 100; //global variabel h tildeles værdien 100
 let x, y, z, j, k, l;
