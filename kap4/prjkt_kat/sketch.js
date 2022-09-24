@@ -1,13 +1,18 @@
-//De globale variabler defineres og cD og cA tildeles værdier
+/*
+August Leander Hedman
+S2n
+Programmering B, P5.js
+*/
+
+// erklæring af globale variabler
 let x,y,a,b,speed,d;
 let cX,cY;
-let cD = 75;
-let cA = 2;
+let cD = 75; //cD tildeles værdien 75
+let cA = 2; //cA tildeles værdien 2
 let rX, rY, eX,eY;
-let img;
 
 
-//funktionen kører en gang, den definerer kanvasset og tildeler værdier til diverse varaiabler
+// setup funktionen kører en gang når programmet starter
 function setup() {
   createCanvas(400, 400);
   frameRate(60);
@@ -25,13 +30,18 @@ function setup() {
 //functionen kører hvert frame
 function draw() {
   background(121,66,234);
-  collision()
-  circle(x,y,d);
-  circle(cX,cY,cD);
-  checkBoundaries();;
-  x += a;
+  collision(); 
+  circle(x,y,d); //den første cirkel
+  circle(cX,cY,cD); //den anden cirkel
+  checkBoundaries();; //kører funktionen checkBoundaries
+  x += a; 
   y += b;
 
+  mouseChase();
+}
+
+//funktion der opdaterer den anden cirkel (musens) position
+function mouseChase(){
   rX = x - cX;
   rY = y - cY;
 
@@ -40,10 +50,9 @@ function draw() {
 
   cX += cA * eX;
   cY += cA * eY;
-
 }
 
-//function to check for collision
+//funktion der håndterer collision
 function collision(){
   //hvis afstanden mellem de to centerpoints af hver cirkel er mindre end deres radier adderet har de kollideret
   //beregnes ved afstandsformlen
@@ -51,14 +60,13 @@ function collision(){
     a = 0;
     b = 0;
     cA = 0;
-    console.log('You got hit!')
-    
+    //console.log('You got hit!')
   }
 }
 
-//tjekker om vores x eller y-koordinater overstiger eller er mindre end canvassets parametre
+//funktion der håndterer kollision med kanvassets grænser
 function checkBoundaries(){
-  if(x + d/2 >= width){
+  if(x + d/2 >= width){ //d/2 repræsenterer radius af cirklen
       a *= -1;
       b=0;
   } if(x - d/2 <= 0){
@@ -75,7 +83,7 @@ function checkBoundaries(){
   }
 }
 
-//funktionen ordner keypresses
+//Denne funktion hånderer keypresses
 function keyPressed(){
   if(key === 'w'){
     b = -speed;
