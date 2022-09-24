@@ -1,4 +1,10 @@
-//ærklæring af globale variabler, og tildeling til enkele af dem
+/*
+August Leander Hedman
+S2n
+Programmering B, P5.js
+*/
+
+//erklæring af globale variabler, og tildeling til enkele af dem
 let d = 40;
 let h = 100;
 let fD = 20;
@@ -7,7 +13,7 @@ let letr;
 let key;
 let x = d - d / 4;
 let song;
-//ærklæring af arrayet binds, som er tildelt string værdierne til de knapper, der skal afspille lyde
+//erklæring af arrayet binds, som er tildelt string værdierne til de knapper, der skal afspille lyde
 var binds = [
   "q",
   "w",
@@ -28,6 +34,7 @@ var binds = [
   "8",
 ];
 
+// setup funktionen kører en gang når programmet starter
 function setup() {
   createCanvas(360, 400);
   background(156);
@@ -38,7 +45,7 @@ function draw() {
   //for loop der tegner rektanglerne
   for (i = 0; i <= width / 40; i++) {
     fill(255, 255, 255);
-    //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den - denne metode er dog knap så god at anvende, da den afhænger af rameraten.
+    //hvis binds[i] er lig med key, så skal rektanglen være rød, fordi man har trykket på den - denne metode er dog knap så god at anvende, da den afhænger af frameraten.
     //hvis frameRaten er for høj, så ses key response ikke på skærmen
     if (binds[i] == key) {
       fill(169, 169, 169);
@@ -63,7 +70,7 @@ function draw() {
 function keyPressed() {
   //console.log('assets/node' + event.key + '.mp3');
   if (binds.includes("" + event.key)) {
-    //hvis den er i arrayet, definerer den song variablen som en ny p5.sound, afhængig af hvilken knap der er trykket på
+    //hvis den er i arrayet, tildeler den song en ny p5.sound, afhængig af hvilken knap der er trykket på
     song = new Audio("media/node" + event.key + ".mp3");
     //spiller lyden
     song.play();
