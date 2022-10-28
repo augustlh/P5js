@@ -11,21 +11,17 @@ let n2 = [];
 
 function setup() {
   createCanvas(400, 400);
-  //n = n.slice(2 - 1, n.length);
-  //print(n);
 }
 
 function draw() {
-  background(220);
-  score = 0;
-
-  for (let i = 0; i < n.length; i++) {
-    if (n[i] > n[score]) {
-      score = i;
+  if (n.length > 0) {
+    score = 0;
+    for (let i = 0; i < n.length; i++) {
+      if (n[i] > n[score]) {
+        score = i;
+      }
     }
-    if ((i = n.length)) {
-      print(n[score]);
-      n = n.slice(score + 1, n.length);
-    }
+    print(n[score]);
+    n.splice(score, 1);
   }
 }
