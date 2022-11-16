@@ -24,3 +24,5 @@ function drawParabola(a, b, c) {
     point(x + width / 2, height / 2 - y);
   }
 }
+
+//hej noah
