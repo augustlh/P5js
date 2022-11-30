@@ -24,7 +24,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  background(255);
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
       grid[i][j].show();
@@ -33,12 +33,34 @@ function draw() {
 }
 
 function mousePressed() {
-  if (mouseButton == LEFT)
+  if (mouseButton == LEFT) {
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
         if (grid[i][j].contains(mouseX, mouseY)) {
-          circle(grid[i][j].x, grid[i][j].y, 20);
+          if (grid[i][j].square == false && grid[i][j].circle == false) {
+            grid[i][j].draw("CIRCLE");
+          }
         }
       }
     }
+  }
+  if (mouseButton == RIGHT) {
+    for (let i = 0; i < columns; i++) {
+      for (let j = 0; j < rows; j++) {
+        if (grid[i][j].contains(mouseX, mouseY)) {
+          grid[i][j].draw("CROSS");
+        }
+      }
+    }
+  }
+}
+
+function keyPressed() {
+  if (keyCode == 69) {
+    for (let i = 0; i < columns; i++) {
+      for (let j = 0; j < rows; j++) {
+        grid[i][j].clear();
+      }
+    }
+  }
 }
