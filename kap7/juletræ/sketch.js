@@ -26,7 +26,7 @@ function draw() {
 
 }
 
-
+//kke nødvendigvis at bruge class
 class Stamme{
   constructor(x,y,w){
     this.x = x; 
