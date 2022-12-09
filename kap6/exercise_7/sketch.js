@@ -19,6 +19,7 @@ function draw() {
 }
 
 function drawHang(i) {
+  
   if (wrongGuesses == 1) {
     circle(width / 2, height / 2, 40);
   } else if (wrongGuesses == 2) {
