@@ -2,6 +2,7 @@ let rows = 3;
 let columns = 3;
 let grid;
 let w;
+let turn = 'CROSS';
 
 function makeArray(col, rows) {
   var arr = new Array(col);
@@ -27,28 +28,31 @@ function draw() {
   background(255);
   for (let i = 0; i < columns; i++) {
     for (let j = 0; j < rows; j++) {
-      grid[i][j].show();
+      grid[i][j].winner();  
+      grid[i][j].show();  
     }
   }
 }
 
 function mousePressed() {
-  if (mouseButton == LEFT) {
+  if (mouseButton == LEFT && turn == 'CIRCLE') {
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
         if (grid[i][j].contains(mouseX, mouseY)) {
           if (grid[i][j].square == false && grid[i][j].circle == false) {
             grid[i][j].draw("CIRCLE");
+            turn = 'CROSS';
           }
         }
       }
     }
   }
-  if (mouseButton == RIGHT) {
+  if (mouseButton == RIGHT && turn == 'CROSS') {
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
         if (grid[i][j].contains(mouseX, mouseY)) {
           grid[i][j].draw("CROSS");
+          turn = 'CIRCLE';
         }
       }
     }

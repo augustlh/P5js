@@ -1,6 +1,7 @@
 function setup() {
   createCanvas(400, 400);
-  triangleConst(125, 100, 125);
+  translate(width/2,height/2)
+  triangleConst(200, 10, 60);
 }
 
 function draw() {}
