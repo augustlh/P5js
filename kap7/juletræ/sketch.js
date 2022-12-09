@@ -8,7 +8,7 @@ function setup() {
   gran = new Gran(200-40,300,100);
   star = new Star(200+10.5,295-100,20);
   for(let i = 0; i < 5; i++){
-    kugler[i] = new Kugler(random(180,200),random(200,300),5);
+    kugler[i] = new Kugler(random(180,200),random(200,300),10);
   }
 }
 
@@ -16,14 +16,13 @@ function draw() {
   background(220);
   stamme.show();
   gran.show();
-  star.show();
   for(let i = 0; i < kugler.length; i++){
     //kugler[i].update(colors[int(random(0,colors.length))]);
     let color = colors[int(random(0,colors.length))]
     kugler[i].show();
     kugler[i].update(color);
   }
-
+  star.show();
 }
 
 //kke nødvendigvis at bruge class
