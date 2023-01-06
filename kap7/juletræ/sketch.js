@@ -35,6 +35,7 @@ function setup() {
 function draw() {
   background(220);
   push();
+  noStroke();
   stamme.show();
   gran.show();
   pop();
@@ -64,6 +65,7 @@ class Stamme {
   show() {
     push();
     fill(100, 50, 0);
+    noStroke();
     rect(this.x, this.y, this.w, this.w * 2);
     pop();
   }
